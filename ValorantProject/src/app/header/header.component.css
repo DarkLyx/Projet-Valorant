@@ -1,0 +1,49 @@
+.nav-link {
+    position: relative;
+    padding: 8px 12px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: red;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-link:hover {
+    color: red;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+ul {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* Espace entre les éléments */
+    list-style: none;
+    /* Enlever les puces */
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'Valorant';
+    src: url('https://fonts.cdnfonts.com/s/33964/Valorant.woff') format('woff');
+}
+
+.font-valorant {
+    font-family: 'Valorant', sans-serif;
+}
