@@ -1,1 +1,36 @@
-<p>maps works!</p>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+
+<body>
+    <h1>Valorant Maps</h1>
+     <!-- Carrousel des maps -->
+     <!--<div class="carousel-container">
+        <button class="carousel-button carousel-button-prev" onclick="moveCarousel(-1)">&#10094;</button>
+        <div class="carousel" id="mapsCarousel"></div>
+        <button class="carousel-button carousel-button-next" onclick="moveCarousel(1)">&#10095;</button>
+      </div>-->
+      <div class="row">
+        @for (item of mapsData; track item.id) {
+            <div class="col-3">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="imageMap" (click)="selectMap(item)">
+                            <img class="grows rounded-image" [src]="item.image" height="200px" />
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center">
+                        <div>{{ item.name }}</div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+
+</html>

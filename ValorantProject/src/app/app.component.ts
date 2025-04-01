@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   apiservice = inject(AppService);
   ngOnInit() : void {
     // Code to be executed on component initialization
-    this.apiservice.getData().subscribe((data) => {
+    this.apiservice.getAgents().subscribe((data) => {
       console.log(data);
     })
   }
