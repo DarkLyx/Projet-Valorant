@@ -8,6 +8,6 @@ export const routes: Routes = [
     { path: 'agent/:id', loadComponent: () => import('./agent-info/agent-info.component').then(a => a.AgentInfoComponent) },
     { path: 'my-banners', loadComponent: () => import('./my-banners/my-banners.component').then(m => m.MyBannersComponent) },
     { path: 'maps', loadComponent: () => import('./maps/maps.component').then(m => m.MapsComponent) },
-    { path: 'mapInfo/:id', loadComponent: () => import('./map-info/map-info.component').then(m => m.MapInfoComponent) },
+    { path: 'map-info/:id', loadComponent: () => import('./map-info/map-info.component').then(m => m.MapInfoComponent) },
     { path: 'about', loadComponent: () => import('./about/about.component').then(a => a.AboutComponent) },
 ];

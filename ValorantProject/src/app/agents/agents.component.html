@@ -11,7 +11,7 @@
             <form [formGroup]="filterForm2" (ngSubmit)="filtrer()">
                 <label for="choix"> role :</label>
                 <select id="choix" name="choix" [formControl]="filtreCtrl2" >
-                    <option value="">all </option>
+                    <option value="">All </option>
                     @for(role of roles; track role ){
                         <option  [value]="role">{{ role }}</option>
                     }

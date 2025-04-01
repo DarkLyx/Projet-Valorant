@@ -25,7 +25,7 @@ export class MapsComponent implements OnInit {
   }
 
   selectMap(mapId: string): void {
-    this.router.navigate(['/maps', mapId]);
+    this.router.navigate(['/map-info', mapId]);
   }
 
   /*fetchMaps(): void {
