@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AppService } from './app.service';
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ import { FooterComponent } from "./footer/footer.component";
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
+export class AppComponent  {
   title = 'ValorantProject';
 
   apiservice = inject(AppService);

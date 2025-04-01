@@ -1,0 +1,42 @@
+<body>
+    <div class="title">
+        <h1>Agent Details</h1>
+    </div>
+    <div class="agent-card">
+      <h2>{{agent.name}}</h2>
+      <img [src]="agent.image" [alt]="agent.name">
+      <p class="role">{{agent.role}}</p>
+      <p>{{agent.description}}</p>
+      <div class="abilities">
+        <h3>Competences :</h3>
+        <div class="ability">
+          <img [src]="agent.abilitiesIcon[0]" alt="Cloudburst">
+          <div>
+            <strong>{{agent.abilitiesName[0]}}</strong>
+            <p>{{agent.abilitiesDescription[0]}}</p>
+          </div>
+        </div>
+        <div class="ability">
+          <img [src]="agent.abilitiesIcon[1]" alt="Updraft">
+          <div>
+            <strong>{{agent.abilitiesName[1]}}</strong>
+            <p>{{agent.abilitiesDescription[1]}}</p>
+          </div>
+        </div>
+        <div class="ability">
+          <img [src]="agent.abilitiesIcon[2]" alt="Tailwind">
+          <div>
+            <strong>{{agent.abilitiesName[2]}}</strong>
+            <p>{{agent.abilitiesDescription[2]}}</p>
+          </div>
+        </div>
+        <div class="ability">
+          <img [src]="agent.abilitiesIcon[3]" alt="Blade Storm">
+          <div>
+            <strong>{{agent.abilitiesName[3]}}</strong>
+            <p>{{agent.abilitiesDescription[3]}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>

@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 0;
+    margin:0;
+  }
+  .title{
+    padding:3%;
+    background-color: #1a1a1a;
+}
+  .agent-card {
+    margin-bottom: 5%;
+    padding: 20px;
+    border-radius: 15px;
+    background: #2a2a2a;
+    box-shadow: 5px 5px 15px rgba(255, 70, 85, 0.5);
+    display: inline-block;
+    width: 25%;
+    text-align: left;
+  }
+  img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .role {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-transform: uppercase;
+    color: #ff4655;
+  }
+  .abilities {
+    margin-top: 10px;
+  }
+  .ability {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .ability img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }

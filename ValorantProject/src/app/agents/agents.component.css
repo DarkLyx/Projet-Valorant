@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #ff0000;
+}
+     .agents {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+        background-color: #1a1a1a;
+        color:  #ffcccc;
+        margin: 0;
+        padding: 0;
+      }
+      /* Style du header */
+      header {
+        background-color: #222;
+        padding: 10px;
+        text-align: center;
+      }
+      header a {
+        color: white;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      header a:hover {
+        color: #ff4655;
+      }
+
+      .filters {
+        padding: 1%;
+      }
+      input, select {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-right: 10px;
+      }
+      .agent-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding:10% 20%;
+        padding-top: 0;
+      }
+      .agent-card {
+        padding: 15px;
+        border-radius: 10px;
+        background: #2a2a2a;
+        box-shadow: 5px 5px 15px rgba(255, 70, 85, 0.5);
+        text-align: center;
+        width: 200px;
+        cursor: pointer;
+        margin: 20% 5%;
+      }
+      .agent-card:hover{
+        transform: scale(1.1); 
+        background: #3a3a3a;        
+      }
+      img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .role {
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #ff4655;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      .filters {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px; /* Espace entre les éléments */
+        margin-bottom: 20px;
+    }
+    
+    .filters form {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Espacement entre les champs */
+    }
+    
+    .filters input,
+    .filters select {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+    
+    .filters label {
+        font-weight: bold;
+    }
+    
+    .title{
+        padding: 1%;
+        font-size: 3em;
+        font-weight: bold;
+        text-align: center;
+    }
+    .no-agents-message {
+        font-size: 2.5em;
+        text-align: center;
+        padding-bottom: 10%;
+    }

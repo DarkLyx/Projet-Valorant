@@ -1,1 +1,46 @@
-<p>agents works!</p>
+    <div class="agents">
+        <div class="title">
+            <p>Valorant Agents</p>
+        </div>
+
+        <div class="filters">
+            <form (ngSubmit)="filtrer()" [formGroup]="filterForm">
+                <div>
+                <input [formControl]="filtreCtrl" type="text" id="searchBar" placeholder="Search for an agent...">    </div>
+            </form>
+            <form [formGroup]="filterForm2" (ngSubmit)="filtrer()">
+                <label for="choix"> role :</label>
+                <select id="choix" name="choix" [formControl]="filtreCtrl2" >
+                    <option value="">all </option>
+                    @for(role of roles; track role ){
+                        <option  [value]="role">{{ role }}</option>
+                    }
+                   
+                    </select>             
+            </form>
+        </div>
+        <div>
+            <p>Click on an agent to see their details.</p>
+        </div>
+        <div id="agentContainer" class="agent-container">
+            @for (agent of agents; track agent)
+            {
+                <a [routerLink]="['/agent', agent.id]">
+                    <div class="agent-card">
+                        <h3>{{ agent.name }}</h3>
+                        <img [src]="agent.smallIcon" [alt]="agent.name">
+                        <p style="margin-top:15%" class="role">{{ agent.role || 'Aucun rôle' }}</p>
+                    </div>
+                </a>
+            }  
+            
+        </div>
+        @if ( agents.length === 0)
+        {
+            <p class="no-agents-message">No agents match the criteria.</p>
+        }
+   
+    
+   
+
+
