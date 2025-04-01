@@ -1,1 +1,22 @@
-
+<div [style.backgroundImage]="'url(' + map.background + ')'" class="background-container">
+    <div class="map-container">
+        <!-- Bannière Horizontale -->
+        <div class="map-title">
+            <h1>{{ map.name }}</h1>
+            <img [src]="map.banniereHorizontal" alt="Bannière Horizontale" class="banner-horizontal" />
+            <div class="map-content">
+                <!-- Bannière Verticale -->
+                    <img [src]="map.banniereVertical" alt="Bannière Verticale" class="banner-vertical" />
+                <!-- Mini-Map -->
+                 <div class="mini-map-container">
+                    <img [src]="map.miniMap" alt="Mini-Map" class="mini-map"/>
+                   <span>
+                    @for(callouts of map.callouts; track callouts.id) {
+                        <button class="btn btn-danger" style="position: absolute;" [style.top]="convertY(callouts.location.x, callouts.location.y) + '%'" [style.left]="convertX(callouts.location.x, callouts.location.y) + '%'"> {{ callouts.regionName }}</button>    
+                    }
+                   </span>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>

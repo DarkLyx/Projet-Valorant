@@ -4,6 +4,7 @@ import { map, Observable, tap } from 'rxjs';
 import { Map } from './map';
 import { Callout } from './callout';
 import { Agent } from './agent';
+import { MapInfo } from './map-info';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,7 @@ export class AppService {
   getAgents(): Observable<Agent[]> {
     return this.httpClient.get<any>('https://valorant-api.com/v1/agents').pipe(
       map(data => data.data),
-      map(data =>
-        data
+      map(data => data
       .filter((agent: any) => agent.isPlayableCharacter !== false)
       .map((agent: any) => ({ 
         id: agent.uuid,
@@ -79,5 +79,32 @@ export class AppService {
       }))
     );
   }
-  
+
+  getMapById(id:string): Observable<MapInfo> {
+    return this.httpClient.get<any>(`https://valorant-api.com/v1/maps/${id}`).pipe(
+      tap((data: any) => console.log("Raw Map Data:", data)),
+      map((response: any) => response.data),
+      map(response => ({
+            id: response.uuid,
+            name: response.displayName,
+            miniMap: response.displayIcon,
+            banniereHorizontal: response.listViewIcon,
+            banniereVertical: response.listViewIconTall,
+            background: response.premierBackgroundImage,
+            image: response.splash,
+            callouts: response.callouts
+              ? response.callouts.map((callout: any) => ({
+                regionName: callout.regionName,
+                superRegionName: callout.superRegionName,
+                location: {
+                  x: callout.location.x,
+                  y: callout.location.y
+                }
+              }))
+              : []
+          })),
+          tap((data: any) => console.log("Processed Map Info:", data)),
+      );
+  }
+
 }

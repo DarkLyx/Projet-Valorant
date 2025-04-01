@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Empêche tout débordement blanc */
+}
+
+.background-container {
+    background-size: cover; /* Couvre toute la page */
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 100vh; /* Assure que ça prend toute la hauteur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    backdrop-filter: blur(5px); /* Effet flou pour améliorer la lisibilité */
+}
+
+.mini-map-container {
+    margin:0px; 
+    padding:0px; 
+    position: relative;
+}
+
+.mini-map {
+    max-width: 600px; /* Ajuster pour qu'elles aient la même taille */
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    transition: box-shadow 0.3s ease;
+}
+/* Effet hover plus discret */
+.mini-map:hover {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5); /* Légère brillance */
+}
+
+.map-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0; /* On supprime les espaces entre les éléments */
+    width: fit-content;
+    margin-top: 3em;
+}
+
+.banner-horizontal {
+    width: calc(100%); /* Largeur totale = Bannière verticale + mini-map */
+    height: auto;
+    border-radius: 15px;
+}
+
+.banner-horizontal:hover{
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+}
+
+.map-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Bannière verticale (à gauche, même taille que la mini-map) */
+.banner-vertical {
+    max-height: 600px;
+    width: auto;
+    border-radius: 15px;
+}
+
+.banner-vertical:hover{
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+}
+
+img{
+    margin: 10px;
+}
+
+.map-title {
+    text-align: center;
+    font : 2em 'Valorant', sans-serif;
+    color: rgb(235, 203, 203);
+}
+
+
+
