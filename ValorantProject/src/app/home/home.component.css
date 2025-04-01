@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+header {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #ff4655;
+}
+
+/* Introduction */
+.intro {
+    background-color: #333;
+    color: white;
+    padding: 30px 20%;
+    text-align: center;
+}
+
+.intro h2 {
+    font-size: 2rem;
+    color: #ff4655;
+}
+
+.intro p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ffcccc;
+}
+
+/* Sections */
+.section {
+    padding: 40px;
+    text-align: center;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20%;
+}
+
+/* Agents */
+#agents, #maps {
+    background-color: #2a2a2a;
+}
+
+.agent-text, .map-text {
+    width: 45%;
+    color: #ffcccc;
+    text-align: left;
+}
+
+.agent-text h2, .map-text h2 {
+    font-size: 2rem;
+    color: #ff4655;
+}
+
+.agent-text p, .map-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.see-all {
+    font-size: 1.2rem;
+    color: #ff4655;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.see-all:hover {
+    color: #ffcccc;
+}
+
+/* Cartes */
+.agent-card, .map-card {
+    display: inline-block;
+    width: 250px;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #3a3a3a;
+    box-shadow: 5px 5px 15px rgba(255, 70, 85, 0.5);
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+.agent-card:hover, .map-card:hover {
+    transform: scale(1.1);
+    background: #4a4a4a;
+}
+
+.agent-card img, .map-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Carrousels */
+.agent-carousel, .map-carousel {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.prev, .next {
+    background: transparent;
+    border: none;
+    color: #ffcccc;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.prev:hover, .next:hover {
+    color: #ff4655;
+}

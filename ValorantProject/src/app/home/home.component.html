@@ -1,1 +1,85 @@
-<p>home works!</p>
+
+    <!-- Introduction (Explication du jeu) -->
+    <div class="intro">
+        <h2>What is Valorant?</h2>
+        <p>
+            <strong>Valorant</strong> is a tactical shooter played in a <strong>5v5</strong> format, where teams engage in intense battles.  
+            Each <em>agent</em> has <strong>unique abilities</strong> that can change the course of the game.  
+            The main objective is to <strong>plant</strong> or <strong>defuse</strong> the bomb, depending on the team's role,  
+            or to <strong>eliminate the opposing team</strong>. This game combines <strong>strategy</strong>, <strong>teamwork</strong>,  
+            and <strong>precision</strong> to deliver a unique competitive experience.
+        </p>
+    </div>
+    
+
+    <!-- Agents Section -->
+<div >
+    <div style="background-color: #212529;" id="agents" class="section">
+        <div class="content-container">
+            <!-- Texte à gauche -->
+            <div class="agent-text">
+                <h2>Your Agents</h2>
+                <p>
+                    <strong>CREATIVITY IS YOUR GREATEST WEAPON.</strong>
+                </p>
+                <p>
+                    In addition to your weapons, you must choose an agent whose skills, as versatile as they are deadly,  
+                    help you shine in various situations. Each agent is unique, just like all your best moments will be.
+                </p>
+                <a routerLink="/agents" class="see-all">
+                    See All <span class="arrow">→</span>
+                </a>
+            </div>
+            
+    
+            <!-- Carrousel à droite -->
+            <div class="agent-carousel">
+                <button class="prev" (click)="prevAgent()">❮</button>
+                <div class="carousel-container">
+                    <a [routerLink]="['/agent', currentAgent.id]">
+                        <div class="agent-card">
+                            <img [src]="currentAgent.image" [alt]="currentAgent.name" class="agent-image">
+                            <h3 class="agent-name">{{currentAgent.name}}</h3>
+                        </div>
+                    </a>
+                </div>
+                <button class="next" (click)="nextAgent()">❯</button>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div id="maps" class="section">
+    <div class="content-container">
+        <!-- Carrousel à gauche (image) -->
+        <div class="map-carousel">
+            <!-- <button class="prev" (click)="prevMap()">❮</button> -->
+            <div class="carousel-container">
+                <!-- <a [routerLink]="['/map', currentMap.id]"> -->
+                <a href="">
+                    <div class="map-card">
+                        <!-- <img [src]="currentMap.image" [alt]="currentMap.name" class="map-image">
+                        <h3 class="map-name">{{currentMap.name}}</h3> -->
+                    </div>
+                </a>
+            </div>
+            <!-- <button class="next" (click)="nextMap()">❯</button> -->
+        </div>
+
+        <!-- Texte à droite -->
+        <div class="map-text">
+            <h2>Maps</h2>
+            <p>
+                <strong>FIGHT ACROSS THE GLOBE</strong>
+            </p>
+            <p>
+                Each map lets you showcase your creative genius. They are all designed to encourage team strategies,  
+                spectacular plays, and high-tension moments. Achieve the feat that everyone will try to replicate for years to come!
+            </p>
+            <a routerLink="/maps" class="see-all">
+                See All <span class="arrow">→</span>
+            </a>
+        </div>
+        
+    </div>
+</div>
