@@ -53,17 +53,16 @@
     <div class="content-container">
         <!-- Carrousel à gauche (image) -->
         <div class="map-carousel">
-            <!-- <button class="prev" (click)="prevMap()">❮</button> -->
+            <button class="prev" (click)="prevMap()">❮</button>
             <div class="carousel-container">
-                <!-- <a [routerLink]="['/map', currentMap.id]"> -->
-                <a href="">
+                <a [routerLink]="['/map', currentMap.id]">
                     <div class="map-card">
-                        <!-- <img [src]="currentMap.image" [alt]="currentMap.name" class="map-image">
-                        <h3 class="map-name">{{currentMap.name}}</h3> -->
+                         <img [src]="currentMap.image" [alt]="currentMap.name" class="map-image">
+                        <h3 class="map-name">{{currentMap.name}}</h3> 
                     </div>
                 </a>
             </div>
-            <!-- <button class="next" (click)="nextMap()">❯</button> -->
+            <button class="next" (click)="nextMap()">❯</button>
         </div>
 
         <!-- Texte à droite -->

@@ -43,7 +43,7 @@ export class AppService {
       tap((maps: any[]) => console.log("Processed Maps:", maps)),
       map((maps: any[]) =>
         maps
-          .filter(map => map.displayName !== "The Range")
+          .filter(map => map.displayName !== "The Range" && map.displayName !== "Basic Training")
           .map(map => ({
             id: map.uuid,
             name: map.displayName,

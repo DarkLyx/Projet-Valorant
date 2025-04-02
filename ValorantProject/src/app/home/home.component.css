@@ -102,7 +102,9 @@ header a:hover {
     color: white;
     cursor: pointer;
 }
-
+.map-card{
+    width: 300px;
+}
 .agent-card:hover, .map-card:hover {
     transform: scale(1.1);
     background: #4a4a4a;

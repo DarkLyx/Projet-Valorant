@@ -8,7 +8,9 @@
 
 
 <body>
-    <h1>Valorant Maps</h1>
+    <div class="title">
+        <p>Valorant Maps</p>
+    </div>
      <!-- Carrousel des maps -->
      <!--<div class="carousel-container">
         <button class="carousel-button carousel-button-prev" onclick="moveCarousel(-1)">&#10094;</button>
@@ -19,9 +21,9 @@
         @for (item of mapsData; track item.id) {
             <div class="col-3">
                 <div class="row">
-                    <div class="col-12 d-flex justify-content-center">
+                    <div style="padding: 3% 0" class="col-12 d-flex justify-content-center">
                         <div class="imageMap" (click)="selectMap(item.id)">
-                            <img class="grows rounded-image" [src]="item.image" height="200px" />
+                            <img class="grows rounded-image"  loading="lazy" [src]="item.image" height="200px" />
                         </div>
                     </div>
                     <div class="col-12 d-flex justify-content-center">

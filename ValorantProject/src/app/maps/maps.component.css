@@ -5,6 +5,12 @@ body {
     background-color: #1a1a1a;
     color: white;
 }
+.title{
+    padding: 1%;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+}
 
 header {
     background-color: #222;
