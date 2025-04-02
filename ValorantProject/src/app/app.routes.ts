@@ -10,4 +10,6 @@ export const routes: Routes = [
     { path: 'maps', loadComponent: () => import('./maps/maps.component').then(m => m.MapsComponent) },
     { path: 'map-info/:id', loadComponent: () => import('./map-info/map-info.component').then(m => m.MapInfoComponent) },
     { path: 'about', loadComponent: () => import('./about/about.component').then(a => a.AboutComponent) },
+    { path: 'create-banners', loadComponent: () => import('./create-banners/create-banners.component').then(a => a.CreateBannersComponent) },
+
 ];
