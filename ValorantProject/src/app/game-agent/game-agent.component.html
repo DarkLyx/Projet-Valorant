@@ -1,0 +1,74 @@
+<body>
+  <div class="title">
+    <h1>Who's That Agent?</h1>
+  </div>
+
+  <div>
+    <div>
+      <div class="game-container">
+        @if (validation != null)
+        {
+          <div class="image-wrapper">
+            <img id="agentImg" [style.filter]="filter" class="agent-image" [src]="agent.image" alt="Agent Image">
+          </div>
+    
+          @if (validation == false)
+          {
+            <form (ngSubmit)="verif()" id="guessForm" [formGroup]="gameForm" class="guess-form">
+              <input [formControl]="gameCtrl" type="text" id="guessInput" placeholder="Type an agent's name...">
+              <button type="submit">Guess</button>
+            </form>
+          }
+          @else
+          {
+            <div class="success-message">
+              <p>🎉 Congrats! You guessed it in <strong>{{ attempts }}</strong> attempts.</p>
+              <p>🔥 Current streak: <strong>{{ streak }}</strong></p>
+            </div>
+          }
+        }
+        @else
+        {
+          <p class="error-message">❌ Error: Unable to fetch agent data. Please try again later.</p>
+        }
+      </div>
+    
+      <div class="options">
+        <div class="checkbox-group">
+          <label class="custom-checkbox">
+            <input type="checkbox" id="colorImageCheckbox" (change)="toggleColor()">
+            <span class="checkmark"></span>
+            View image in color
+          </label>
+    
+          <label class="custom-checkbox">
+            <input type="checkbox" id="unblurCheckbox" (change)="adjustBlur()">
+            <span class="checkmark"></span>
+            Gradually unblur image
+          </label>
+        </div>
+    
+        <button class="restart-btn" (click)="restart()">New Game</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="agents-list">
+    <table class="agents-table">
+      <thead>
+        <tr>
+          <th>Agent Icon</th>
+          <th>Agent Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (agent of agents; track agent) {
+          <tr>
+            <td><img [src]="agent.smallIcon" [alt]="agent.name" class="agent-icon"></td>
+            <td>{{ agent.name }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</body>

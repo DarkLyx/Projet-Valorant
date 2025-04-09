@@ -6,7 +6,8 @@
         <div class="filters">
             <form (ngSubmit)="filtrer()" [formGroup]="filterForm">
                 <div>
-                <input [formControl]="filtreCtrl" type="text" id="searchBar" placeholder="Search for an agent...">    </div>
+                    <input [formControl]="filtreCtrl" type="text" id="searchBar" placeholder="Search for an agent...">
+                </div>
             </form>
             <form [formGroup]="filterForm2" (ngSubmit)="filtrer()">
                 <label for="choix"> role :</label>
@@ -14,8 +15,7 @@
                     <option value="">All </option>
                     @for(role of roles; track role ){
                         <option  [value]="role">{{ role }}</option>
-                    }
-                   
+                    } 
                     </select>             
             </form>
         </div>

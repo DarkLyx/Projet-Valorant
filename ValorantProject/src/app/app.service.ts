@@ -107,4 +107,27 @@ export class AppService {
       );
   }
 
+  getRandomAgent(): Observable<Agent> {
+    return this.httpClient.get<any>('https://valorant-api.com/v1/agents').pipe(
+      map(data => data.data), // On récupère les données des agents
+      map(data => data
+        .filter((agent: any) => agent.isPlayableCharacter !== false) // Filtrer les agents jouables
+        .map((agent: any) => ({ 
+          id: agent.uuid,
+          name: agent.displayName,
+          role: agent.role?.displayName || 'Unknown',
+          roleid: agent.role?.uuid || null,
+          abilitiesIcon: agent.abilities?.map((ability: any) => ability.displayIcon) || [],
+          abilitiesName: agent.abilities?.map((ability: any) => ability.displayName) || [],
+          abilitiesDescription: agent.abilities?.map((ability: any) => ability.description) || [],
+          image: agent.fullPortrait || '',
+          smallIcon: agent.displayIconSmall || '',
+          description: agent.description || 'No description available',
+        }))
+      ),
+      map(agents => agents[Math.floor(Math.random() * agents.length)]) // Sélectionner un agent aléatoire dans le tableau
+    );
+  }
+  
+
 }
