@@ -91,6 +91,7 @@ export class AppService {
             banniereHorizontal: response.listViewIcon,
             banniereVertical: response.listViewIconTall,
             background: response.premierBackgroundImage,
+            background2: response.stylizedBackgroundImage,
             image: response.splash,
             callouts: response.callouts
               ? response.callouts.map((callout: any) => ({

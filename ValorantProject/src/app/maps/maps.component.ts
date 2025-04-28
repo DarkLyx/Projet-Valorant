@@ -5,7 +5,7 @@ import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-maps',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './maps.component.html',
   styleUrls: ['./maps.component.css']
 })
@@ -27,27 +27,4 @@ export class MapsComponent implements OnInit {
   selectMap(mapId: string): void {
     this.router.navigate(['/map-info', mapId]);
   }
-
-  /*fetchMaps(): void {
-    this.http.get<any>('https://valorant-api.com/v1/maps').subscribe(
-      response => {
-        if (response.status === 200) {
-          this.mapsData = response.data;
-        }
-      },
-      error => {
-        console.error('Erreur lors de la récupération des maps:', error);
-      }
-    );
-  }
-
-  moveCarousel(direction: number): void {
-    if (this.mapsData.length > 0) {
-      this.currentIndex = (this.currentIndex + direction + this.mapsData.length) % this.mapsData.length;
-    }
-  }
-
-  calculatePosition(value: number, multiplier: number, scalar: number): number {
-    return (value * multiplier + scalar) * 100;
-  }*/
 }

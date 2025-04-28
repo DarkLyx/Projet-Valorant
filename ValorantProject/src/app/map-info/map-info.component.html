@@ -1,4 +1,4 @@
-<div [style.backgroundImage]="'url(' + map.background + ')'" class="background-container">
+<div [style.backgroundImage]="'url(' + (map.background ?? map.background2) + ')'" class="background-container">
     <div class="map-container">
         <!-- Bannière Horizontale -->
         <div class="map-title">
@@ -6,10 +6,18 @@
             <img [src]="map.banniereHorizontal" alt="Bannière Horizontale" class="banner-horizontal" />
             <div class="map-content">
                 <!-- Bannière Verticale -->
-                    <img [src]="map.banniereVertical" alt="Bannière Verticale" class="banner-vertical" />
+                <img [src]="map.banniereVertical" alt="Bannière Verticale" class="banner-vertical" />
                 <!-- Mini-Map -->
                  <div class="mini-map-container">
                     <img [src]="map.miniMap" alt="Mini-Map" class="mini-map"/>
+
+                    <!-- BANNIERE D'AVERTISSEMENT -->
+                    @if (hasNoCallouts(map.name)) {
+                        <div class="no-callouts-banner">
+                            Pas de Callouts d'API pour cette map
+                        </div>
+                    } 
+
                    <span>
                     @for(callouts of map.callouts; track callouts.id) {
                         <button class="btn btn-danger" style="position: absolute;" [style.top]="convertY(callouts.location.x, callouts.location.y) + '%'" [style.left]="convertX(callouts.location.x, callouts.location.y) + '%'"> {{ callouts.regionName }}</button>    
