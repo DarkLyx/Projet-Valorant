@@ -4,12 +4,12 @@
         </div>
 
         <div class="filters">
-            <form (ngSubmit)="filtrer()" [formGroup]="filterForm">
+            <form (ngSubmit)="filtrer()" [formGroup]="filterForm">  <!-- Barre de recherche qui permet de choisir l'agent que l'on veut trouver-->
                 <div>
                     <input [formControl]="filtreCtrl" type="text" id="searchBar" placeholder="Search for an agent...">
                 </div>
             </form>
-            <form [formGroup]="filterForm2" (ngSubmit)="filtrer()">
+            <form [formGroup]="filterForm2" (ngSubmit)="filtrer()"> <!-- Deuxieme bouton filter qui permet de filter en fonction du role de l'agent-->
                 <label for="choix"> role :</label>
                 <select id="choix" name="choix" [formControl]="filtreCtrl2" >
                     <option value="">All </option>
@@ -25,7 +25,7 @@
         <div id="agentContainer" class="agent-container">
             @for (agent of agents; track agent)
             {
-                <a [routerLink]="['/agent', agent.id]">
+                <a [routerLink]="['/agent', agent.id]"> <!-- On redirige sur la page de l'agent selon l'id-->
                     <div class="agent-card">
                         <h3>{{ agent.name }}</h3>
                         <img [src]="agent.smallIcon" [alt]="agent.name">
@@ -34,8 +34,8 @@
                 </a>
             }  
             
-        </div>
-        @if ( agents.length === 0)
+        </div> <!-- Si aucun agent ne correspond à la recherche, on affiche ce message -->
+        @if ( agents.length === 0)       
         {
             <p class="no-agents-message">No agents match the criteria.</p>
         }

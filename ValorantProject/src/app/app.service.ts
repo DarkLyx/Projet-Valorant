@@ -14,7 +14,8 @@ export class AppService {
   httpClient = inject(HttpClient);
   constructor() { }
 
-  getAgents(): Observable<Agent[]> {
+  getAgents(): Observable<Agent[]> { // On récupère la liste des agents
+    // On fait une requête GET à l'API de Valorant pour récupérer les agents
     return this.httpClient.get<any>('https://valorant-api.com/v1/agents').pipe(
       map(data => data.data),
       map(data => data
@@ -36,7 +37,8 @@ export class AppService {
   }
 
 
-  getMaps(): Observable<Map[]> {
+  getMaps(): Observable<Map[]> { // On récupère la liste des maps
+    // On fait une requête GET à l'API de Valorant pour récupérer les maps
     return this.httpClient.get('https://valorant-api.com/v1/maps').pipe(
       tap((data: any) => console.log("Raw API Data:", data)),
       map((response: any) => response.data),
@@ -63,7 +65,8 @@ export class AppService {
     );
   }
 
-  getAgentbyId(id:string): Observable<Agent>{
+  getAgentbyId(id:string): Observable<Agent>{ // On récupère un agent par son ID
+    // On fait une requête GET à l'API de Valorant pour récupérer un agent par son ID
     return this.httpClient.get<any>(`https://valorant-api.com/v1/agents/${id}`).pipe(
       map(data => ({
         id: data.data.uuid,
@@ -80,7 +83,8 @@ export class AppService {
     );
   }
 
-  getMapById(id:string): Observable<MapInfo> {
+  getMapById(id:string): Observable<MapInfo> { // On récupère une map par son ID
+    // On fait une requête GET à l'API de Valorant pour récupérer une map par son ID
     return this.httpClient.get<any>(`https://valorant-api.com/v1/maps/${id}`).pipe(
       tap((data: any) => console.log("Raw Map Data:", data)),
       map((response: any) => response.data),
@@ -108,7 +112,8 @@ export class AppService {
       );
   }
 
-  getRandomAgent(): Observable<Agent> {
+  getRandomAgent(): Observable<Agent> { // On récupère un agent aléatoire
+    // On fait une requête GET à l'API de Valorant pour récupérer un agent aléatoire
     return this.httpClient.get<any>('https://valorant-api.com/v1/agents').pipe(
       map(data => data.data), // On récupère les données des agents
       map(data => data

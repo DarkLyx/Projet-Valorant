@@ -12,12 +12,14 @@
                     <img [src]="map.miniMap" alt="Mini-Map" class="mini-map"/>
 
                     <!-- BANNIERE D'AVERTISSEMENT -->
+                    <!-- Certaines map n'ont pas de Callouts donc ce @if est necessaire-->
                     @if (hasNoCallouts(map.name)) {
                         <div class="no-callouts-banner">
                             Pas de Callouts d'API pour cette map
                         </div>
                     } 
 
+                <!-- Affichage des callouts (def dans l'interface)-->
                    <span>
                     @for(callouts of map.callouts; track callouts.id) {
                         <button class="btn btn-danger" style="position: absolute;" [style.top]="convertY(callouts.location.x, callouts.location.y) + '%'" [style.left]="convertX(callouts.location.x, callouts.location.y) + '%'"> {{ callouts.regionName }}</button>    

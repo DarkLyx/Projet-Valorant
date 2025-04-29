@@ -11,7 +11,7 @@ import { AppService } from '../app.service';
 })
 export class MapsComponent implements OnInit {
 
-  apiservice = inject(AppService);
+  apiservice = inject(AppService); //On inject le service pour récupérer les données de l'API
 
   mapsData: any[] = [];
   currentIndex: number = 0;
@@ -25,6 +25,6 @@ export class MapsComponent implements OnInit {
   }
 
   selectMap(mapId: string): void {
-    this.router.navigate(['/map-info', mapId]);
+    this.router.navigate(['/map-info', mapId]); // On redirige vers la page de la map sélectionnée
   }
 }

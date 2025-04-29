@@ -11,3 +11,5 @@ export const routes: Routes = [
     { path: 'about', loadComponent: () => import('./about/about.component').then(a => a.AboutComponent) },
     { path: 'game-agent', loadComponent: () => import('./game-agent/game-agent.component').then(a => a.GameAgentComponent) },
 ];
+
+// Toutes les redirection pour chaque page

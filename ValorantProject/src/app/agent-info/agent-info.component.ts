@@ -18,7 +18,7 @@ export class AgentInfoComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {    //fetch data des agents sur notre API
     this.agentId = this.route.snapshot.paramMap.get('id');
     if (this.agentId) {
       this.apiservice.getAgentbyId(this.agentId).subscribe((data: Agent) => {

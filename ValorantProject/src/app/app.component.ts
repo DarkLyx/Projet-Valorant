@@ -10,7 +10,7 @@ import { AppService } from './app.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent  {
+export class AppComponent  {    // Test de base pour tester l'API au début du projet (ça remonte)
   title = 'ValorantProject';
 
   apiservice = inject(AppService);

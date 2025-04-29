@@ -28,8 +28,8 @@ export class AgentsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.apiservice.getAgents().subscribe((data: Agent[]) => {
-      this.agents = data;
-      this.agentsOriginal = data;
+      this.agents = data;           // Ici c'est la variable des agents visibles sur la page selon les filtres
+      this.agentsOriginal = data;   // Ici c'est la variable des agents originaux qui ne changent pas
     });
 
     this.apiservice.getAgents().subscribe((data: Agent[]) => {
@@ -39,19 +39,19 @@ export class AgentsComponent implements OnInit, OnDestroy {
   }
 
   constructor() {
-    this.filterForm = new UntypedFormGroup({
+    this.filterForm = new UntypedFormGroup({   // Barre de recherche
       filtre: this.filtreCtrl,
     });
 
-    this.filterForm2 = new UntypedFormGroup({
+    this.filterForm2 = new UntypedFormGroup({   // Menu déroulant selectionnable 
       filtre2: this.filtreCtrl2,
     });
 
-    this.mySub = this.filtreCtrl.valueChanges.subscribe(() => this.filtrer());
-    this.roleSub = this.filtreCtrl2.valueChanges.subscribe(() => this.filtrer());
+    this.mySub = this.filtreCtrl.valueChanges.subscribe(() => this.filtrer()); //Subcription pour la barre de recherche, pas besoin de valider avec un bouton
+    this.roleSub = this.filtreCtrl2.valueChanges.subscribe(() => this.filtrer()); //Subscription pour le menu déroulant, pareil que au dessus
   }
 
-  filtrer() {
+  filtrer() {   //Filtre des agents avec la case géré
     this.agents = this.agentsOriginal.filter((agent: Agent) => 
       agent.name.toLowerCase().includes(this.filtreCtrl.value.toLowerCase()) &&
       agent.role.toLowerCase().includes(this.filtreCtrl2.value.toLowerCase()) 

@@ -55,7 +55,7 @@
         <div class="map-carousel">
             <button class="prev" (click)="prevMap()">❮</button>
             <div class="carousel-container">
-                <a [routerLink]="['/map', currentMap.id]">
+                <a [routerLink]="['/map-info', currentMap.id]">
                     <div class="map-card">
                          <img [src]="currentMap.image" [alt]="currentMap.name" class="map-image">
                         <h3 class="map-name">{{currentMap.name}}</h3> 

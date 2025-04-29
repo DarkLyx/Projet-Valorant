@@ -3,13 +3,20 @@
     <h1>Who's That Agent?</h1>
   </div>
 
+  <!-- Le principe du mini jeu est de trouver l'agent qui est caché sur l'image.
+       Une liste d'agent est disponible juste en dessous pour avoir une idée de 
+       qui est potentiellement sur l'image. On peut activer deux options pour avoir 
+       des indices "Mettre la couleur" et "Déflouter l'image à chaque essai" 
+       -->
+
   <div class="game-container">
         @if (validation != null)
         {
           <div class="image-wrapper">
-            <img id="agentImg" [style.filter]="filter" class="agent-image" [src]="agent.image" alt="Agent Image">
+            <img id="agentImg" [style.filter]="filter" class="agent-image" [src]="agent.image" alt="Agent Image"> <!-- Image de l'agent-->
           </div>
     
+          <!-- On affiche le formulaire tant que l'agent n'est pas trouvé-->
           @if (validation == false)
           {
             <form (ngSubmit)="verif()" id="guessForm" [formGroup]="gameForm" class="guess-form">
@@ -17,7 +24,7 @@
               <button type="submit">Guess</button>
             </form>
           }
-          @else
+          @else 
           {
             <div class="success-message">
               <p>🎉 Congrats! You guessed it in <strong>{{ attempts }}</strong> attempts.</p>
@@ -31,6 +38,7 @@
         }
       </div>
     
+      <!-- Option pour mettre de la couleur à l'image-->
       <div class="options">
         <div class="checkbox-group">
           <label class="custom-checkbox">
@@ -39,6 +47,7 @@
             View image in color
           </label>
     
+        <!-- Option pour défloutter l'image-->
           <label class="custom-checkbox">
             <input type="checkbox" id="unblurCheckbox" (change)="adjustBlur()">
             <span class="checkmark"></span>
@@ -49,6 +58,7 @@
         <button class="restart-btn" (click)="restart()">New Game</button>
       </div>
 
+  <!-- Liste des agents possible avec filtre  -->
   <div class="agents-list">
     <table class="agents-table">
       <thead>

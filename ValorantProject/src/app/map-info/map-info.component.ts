@@ -49,6 +49,7 @@ export class MapInfoComponent implements OnInit {
         return this.noCalloutsMaps.includes(mapName);
       }
 
+    // Ici je fais un tableau avec les maps et les callouts qui correspondent
     mapConverterByMapName: { [key: string]: Converter } = {
       Ascent: ascentCallouts,
       Split: splitCallouts,
@@ -70,7 +71,7 @@ interface Converter {   // Je dois convertir pour chaque map car les gars qui on
   minX: number;         // codé l'API ne savent pas se répérer sur une carte 
   maxX: number;
   minY: number;
-  maxY: number;
+  maxY: number;         // Je fais l'interface ici car elle est utilisée seulement dans ce .ts
 }
 
 // Tous les maps qui ont des callouts pour les afficher aux bons endroits
