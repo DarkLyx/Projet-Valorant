@@ -24,8 +24,8 @@ C’est un mélange de **précision**, de **stratégie** et de **coopération d�
 ## 🛠️ Installation
 
 ### Prérequis
-- Node.js  
-- Angular CLI (`npm install -g @angular/cli`)  
+- Node.js = v22.12.0
+- Angular CLI (`npm install -g @angular/cli`)  = 19.2.4
 
 ### Étapes
 
